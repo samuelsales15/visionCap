@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionCap Smart - Capacete com Viseira de Grau</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 5px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+        
+        .product-gallery {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .main-image-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .thumbnail:hover {
+            border-color: #1a73e8;
+            transform: scale(1.05);
+        }
+        
+        .models-note {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            border-left: 4px solid #1a73e8;
+        }
+        
+        .product-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .product-code {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .ratings {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .price-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .price-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1a73e8;
+        }
+        
+        .price-option {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-option:last-child {
+            border-bottom: none;
+        }
+        
+        .price-name {
+            font-weight: bold;
+        }
+        
+        .price-value {
+            color: #1a73e8;
+            font-weight: bold;
+        }
+        
+        .medical-note {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .buy-button:hover {
+            background-color: #0d5bba;
+        }
+        
+        .out-of-stock {
+            text-align: center;
+            color: #d32f2f;
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">VisionCap Smart</div>
+            <h1>Capacete com Viseira de Grau</h1>
+        </header>
+        
+        <div class="product-gallery">
+            <div class="main-image-container">
+                <img id="mainImage" src="capacete-visioncap.jpeg" alt="Capacete VisionCap Smart" class="main-image" width="300">
+            </div>
+            
+            <div class="thumbnail-container">  
+                <img src="modelo1.jpeg" alt="VisionCap Sport - Preto/azul" class="thumbnail" 
+                     onclick="changeImage('modelo1.jpeg', 'VisionCap Sport - Preto/azul')">
+            
+                <img src="modelo2.jpeg" alt="VisionCap Elite - Preto/verde" class="thumbnail" 
+                     onclick="changeImage('modelo2.jpeg', 'VisionCap Elite - Preto/verde')">
+            
+                <img src="modelo3.jpeg" alt="VisionCap Pro - Preto Fosco/rosa" class="thumbnail" 
+                     onclick="changeImage('modelo3.jpeg', 'VisionCap Pro - Preto Fosco/rosa')">
+            
+                <img src="modelo4.jpeg" alt="VisionCap Air - Preto/vermelho" class="thumbnail" 
+                     onclick="changeImage('modelo4.jpeg', 'VisionCap Air - Preto/vermelho')">
+            
+                <img src="capacete-visioncap.jpeg" alt="VisionCap - Preto/cinza" class="thumbnail" 
+                     onclick="changeImage('capacete-visioncap.jpeg', 'VisionCap - Preto/cinza')">
+            
+                <img src="m1.jpeg" alt="VisionCap - Black Night" class="thumbnail"
+                     onclick="changeImage('m1.jpeg', 'VisionCap - Black Night')">
+            
+                <img src="m3.jpeg" alt="VisionCap M3 - Azul/Preto" class="thumbnail" 
+                     onclick="changeImage('m3.jpeg', 'VisionCap M3 - colorido')">
+            
+                <img src="m2.jpeg" alt="VisionCap M2 - Vermelho/Preto" class="thumbnail" 
+                     onclick="changeImage('m2.jpeg', 'VisionCap M2 - moderno')">
+            </div>
+            
+            
+            <div class="models-note">
+                🔍 Clique nas miniaturas para visualizar nossos outros modelos disponíveis. 
+                Todos com a mesma qualidade VisionCap e viseira de grau opcional.
+            </div>
+        </div>
+        
+        <div class="product-title" id="modelTitle">VisionCap Smart - Capacete Moto Premium com Viseira Ajustável</div>
+        <div class="product-code">Cód. Item VCS-2023-58 | Tamanhos 52, 54, 56, 58, 60, 62, 64 </div>
+        
+        <div class="ratings">
+            ⭐⭐⭐⭐⭐ 5.0 | 💡️ 99% de avaliações positivas
+        </div>
+
+        <div class="promo-info">
+            🚚 <strong>Frete grátis </strong> na primeira compra!<br>
+            💳 Pague <strong>o valor da Lente Simples</strong> em até <strong>10x sem juros</strong> e os demais modelos em até <strong>12x sem juros</strong>!
+        </div>
+        
+        <div class="medical-note">
+            <strong>Importante:</strong> Envie seu exame médico para avaliação. Os valores podem variar de acordo com o grau necessário para sua viseira.
+        </div>
+        
+        <div class="price-section">
+            <div class="price-title">OPÇÕES DE LENTE</div>
+            
+            <div class="price-option">
+                <span class="price-name">Lente Simples</span>
+                <span class="price-value">R$ 1.245,60</span>
+            </div>
+            
+            <div class="price-option">
+                <span class="price-name">Lente Moderada</span>
+                <span class="price-value">R$ 1.545,60</span>
+            </div>
+            
+            <div class="price-option">
+                <span class="price-name">Lente Alta</span>
+                <span class="price-value">R$ 2.196,60</span>
+            </div>
+            
+            <div class="price-option">
+                <span class="price-name">Lente Multifocal</span>
+                <span class="price-value">R$ 2.595,60</span>
+            </div>
+        </div>
+        
+        <button class="buy-button" onclick="showOutOfStock()">COMPRAR AGORA</button>
+<div class="out-of-stock" id="outOfStock" style="display: none;">
+    Site em manutenção. Encontre novos modelos em nossas lojas físicas!
+</div>
+
+    
+    <script>
+        function showOutOfStock() {
+            document.getElementById('outOfStock').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('outOfStock').style.display = 'none';
+            }, 3000);
+        }
+        
+        function changeImage(imageSrc, modelName) {
+            // Altera a imagem principal
+            document.getElementById('mainImage').src = imageSrc;
+            
+            // Atualiza o título do modelo
+            document.getElementById('modelTitle').textContent = modelName;
+            
+        }
+    </script>
+<div class="product-description">
+    <h2>Descrição do Produto</h2>
+    <p>
+        O <strong>VisionCap Smart</strong> é um capacete inovador com viseira de grau integrada, ideal para motociclistas que precisam de correção visual sem abrir mão da segurança e estilo.
+        Fabricado com materiais de alta resistência, oferece conforto, ventilação e proteção completa. 
+        Disponível em diversas cores e modelos para combinar com seu estilo.
+    </p>
+    <ul>
+        <li> ✔ Garantia de 1 ano</li>
+        <li>✔ Viseira personalizada com lentes de grau, sob medida para cada cliente.
+        <li>✔ Design moderno, com sistema de ventilação e acolchoamento antialérgico, focando no conforto.</li>
+        <li>✔ Almofadas internas removíveis e laváveis</li>
+        <li>✔ Ideal para uso urbano e viagens longas</li>
+        <li>✔ 
+            Tratamentos ópticos de alta performance: antirreflexo, proteção UV, filtro de luz azul,
+             lente fotossensível e polarizada.</li>  
+    
+    
+    </ul>
+</div>
